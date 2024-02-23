@@ -182,6 +182,9 @@ public class JavaGroupFrame extends javax.swing.JFrame {
         
         if(exist == true){
             JOptionPane.showMessageDialog(this, "Login Success");
+            HomePage newpage = new HomePage();
+            newpage.setVisible(true);
+            dispose();
             //add new redirect
         }
         else{
