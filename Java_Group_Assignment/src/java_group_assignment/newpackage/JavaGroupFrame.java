@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import javax.swing.JOptionPane;
 public class JavaGroupFrame extends javax.swing.JFrame {
 
@@ -182,6 +183,7 @@ public class JavaGroupFrame extends javax.swing.JFrame {
         
         if(exist == true){
             JOptionPane.showMessageDialog(this, "Login Success");
+            
             HomePage newpage = new HomePage();
             newpage.setVisible(true);
             dispose();
