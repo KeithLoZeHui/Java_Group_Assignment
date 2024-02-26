@@ -4,6 +4,11 @@
  */
 package java_group_assignment.newpackage;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author darke
@@ -27,18 +32,18 @@ public class ReportIssue extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        Chair = new javax.swing.JCheckBox();
+        Table = new javax.swing.JCheckBox();
+        Wardrobe = new javax.swing.JCheckBox();
+        BedFrame = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        Mattress = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        airCon = new javax.swing.JCheckBox();
+        WallSocket = new javax.swing.JCheckBox();
+        BathHeat = new javax.swing.JCheckBox();
+        Lights = new javax.swing.JCheckBox();
+        Fans = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -59,34 +64,44 @@ public class ReportIssue extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("Chair");
-
-        jCheckBox2.setText("Table");
-
-        jCheckBox3.setText("wardrobe");
-
-        jCheckBox4.setText("Bed Frame");
-
-        jLabel1.setText("Furniture Damage: ");
-
-        jCheckBox5.setText("Mattress");
-
-        jLabel2.setText("Electrical Appliance:");
-
-        jCheckBox6.setText("Air Conditioner");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        Chair.setText("Chair");
+        Chair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                ChairActionPerformed(evt);
             }
         });
 
-        jCheckBox7.setText("Wall Socket");
+        Table.setText("Table");
+        Table.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TableActionPerformed(evt);
+            }
+        });
 
-        jCheckBox8.setText("Bath Water Heater");
+        Wardrobe.setText("wardrobe");
 
-        jCheckBox9.setText("Lights");
+        BedFrame.setText("Bed Frame");
 
-        jCheckBox10.setText("Fans");
+        jLabel1.setText("Furniture Damage: ");
+
+        Mattress.setText("Mattress");
+
+        jLabel2.setText("Electrical Appliance:");
+
+        airCon.setText("Air Conditioner");
+        airCon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                airConActionPerformed(evt);
+            }
+        });
+
+        WallSocket.setText("Wall Socket");
+
+        BathHeat.setText("Bath Water Heater");
+
+        Lights.setText("Lights");
+
+        Fans.setText("Fans");
 
         jLabel3.setText("Other Issues:");
 
@@ -140,11 +155,11 @@ public class ReportIssue extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox1))
+                                            .addComponent(Mattress, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(BedFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Wardrobe, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Table, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Chair))
                                         .addGap(43, 43, 43))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,11 +169,11 @@ public class ReportIssue extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCheckBox6)
-                                            .addComponent(jCheckBox8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(Fans, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Lights, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(WallSocket, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(airCon)
+                                            .addComponent(BathHeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(62, 62, 62)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,25 +218,25 @@ public class ReportIssue extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(Chair)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox2)
+                        .addComponent(Table)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox3)
+                        .addComponent(Wardrobe)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox4)
+                        .addComponent(BedFrame)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox5))
+                        .addComponent(Mattress))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox6)
+                        .addComponent(airCon)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox7)
+                        .addComponent(WallSocket)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox8)
+                        .addComponent(BathHeat)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox9)
+                        .addComponent(Lights)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox10))
+                        .addComponent(Fans))
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -239,9 +254,9 @@ public class ReportIssue extends javax.swing.JFrame {
             dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void airConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_airConActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_airConActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -252,8 +267,46 @@ public class ReportIssue extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
+            if(Chair.isSelected() == true){
+                String ch = Chair.getText();
+                String tbl = Table.getText();
+                String war = Wardrobe.getText();
+                String bed = BedFrame.getText();
+                String matt = Mattress.getText();
+
+                File file = new File("Reports.txt");
+                if (!file.exists()) {
+
+                }    
+                try (FileWriter writer = new FileWriter("Reports.txt", true)) {
+                    writer.write(ch + "," + tbl + "," + war + "," + bed +"," +matt + "\n");
+
+                    JOptionPane.showMessageDialog(this, "Appointment Booked.");
+
+
+                Chair.setText("");
+                Table.setText("");
+                Wardrobe.setText("");
+                BedFrame.setText("");
+                Mattress.setText("");
+                }catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
+                    }
+
+                HomePage newpage = new HomePage();
+                    newpage.setVisible(true);
+                    dispose();
+            }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ChairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChairActionPerformed
+            // TODO add your handling code here:
+    }//GEN-LAST:event_ChairActionPerformed
+
+    private void TableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,18 +344,18 @@ public class ReportIssue extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox BathHeat;
+    private javax.swing.JCheckBox BedFrame;
+    private javax.swing.JCheckBox Chair;
+    private javax.swing.JCheckBox Fans;
+    private javax.swing.JCheckBox Lights;
+    private javax.swing.JCheckBox Mattress;
+    private javax.swing.JCheckBox Table;
+    private javax.swing.JCheckBox WallSocket;
+    private javax.swing.JCheckBox Wardrobe;
+    private javax.swing.JCheckBox airCon;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
