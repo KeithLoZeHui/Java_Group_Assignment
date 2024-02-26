@@ -24,6 +24,8 @@ public class HomePage extends javax.swing.JFrame {
      */
     
     
+    //Hello test
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
