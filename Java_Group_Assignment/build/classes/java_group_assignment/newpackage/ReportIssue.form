@@ -43,11 +43,11 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel1" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox5" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox4" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox3" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Mattress" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="BedFrame" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Wardrobe" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Table" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Chair" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
@@ -62,11 +62,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jCheckBox10" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox9" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox7" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox8" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="Fans" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Lights" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="WallSocket" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="airCon" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BathHeat" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
@@ -129,26 +129,26 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Chair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Table" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Wardrobe" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                      <Component id="BedFrame" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox5" min="-2" max="-2" attributes="0"/>
+                      <Component id="Mattress" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jCheckBox6" min="-2" max="-2" attributes="0"/>
+                      <Component id="airCon" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox7" min="-2" max="-2" attributes="0"/>
+                      <Component id="WallSocket" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
+                      <Component id="BathHeat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                      <Component id="Lights" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                      <Component id="Fans" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jTextField1" pref="172" max="32767" attributes="0"/>
               </Group>
@@ -171,22 +171,28 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="Chair">
       <Properties>
         <Property name="text" type="java.lang.String" value="Chair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChairActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="Table">
       <Properties>
         <Property name="text" type="java.lang.String" value="Table"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TableActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="Wardrobe">
       <Properties>
         <Property name="text" type="java.lang.String" value="wardrobe"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="BedFrame">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bed Frame"/>
       </Properties>
@@ -196,7 +202,7 @@
         <Property name="text" type="java.lang.String" value="Furniture Damage: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+    <Component class="javax.swing.JCheckBox" name="Mattress">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mattress"/>
       </Properties>
@@ -206,30 +212,30 @@
         <Property name="text" type="java.lang.String" value="Electrical Appliance:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+    <Component class="javax.swing.JCheckBox" name="airCon">
       <Properties>
         <Property name="text" type="java.lang.String" value="Air Conditioner"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="airConActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+    <Component class="javax.swing.JCheckBox" name="WallSocket">
       <Properties>
         <Property name="text" type="java.lang.String" value="Wall Socket"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+    <Component class="javax.swing.JCheckBox" name="BathHeat">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bath Water Heater"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+    <Component class="javax.swing.JCheckBox" name="Lights">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lights"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+    <Component class="javax.swing.JCheckBox" name="Fans">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fans"/>
       </Properties>
