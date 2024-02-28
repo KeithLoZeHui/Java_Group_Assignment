@@ -16,7 +16,7 @@ public class TecnichainHome extends javax.swing.JFrame {
     public TecnichainHome() {
         initComponents();
     }
-
+    //ihiygufywytfty
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
