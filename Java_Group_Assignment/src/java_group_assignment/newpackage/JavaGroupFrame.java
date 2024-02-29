@@ -54,6 +54,7 @@ public class JavaGroupFrame extends javax.swing.JFrame {
         RegisterBut = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         EnterPassword = new javax.swing.JPasswordField();
+        RegisterBut1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -98,6 +99,14 @@ public class JavaGroupFrame extends javax.swing.JFrame {
             }
         });
 
+        RegisterBut1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        RegisterBut1.setText("Login Selection");
+        RegisterBut1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterBut1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,6 +141,10 @@ public class JavaGroupFrame extends javax.swing.JFrame {
                         .addGap(317, 317, 317)
                         .addComponent(RegisterBut, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(RegisterBut1)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +165,9 @@ public class JavaGroupFrame extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(RegisterBut, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134))
+                .addGap(32, 32, 32)
+                .addComponent(RegisterBut1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -199,6 +214,12 @@ public class JavaGroupFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EnterPasswordActionPerformed
 
+    private void RegisterBut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBut1ActionPerformed
+    LoginSelection newpage = new LoginSelection();
+            newpage.setVisible(true);
+            dispose();            // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterBut1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,6 +260,7 @@ public class JavaGroupFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField EnterPassword;
     private javax.swing.JButton LogoinBut;
     private javax.swing.JButton RegisterBut;
+    private javax.swing.JButton RegisterBut1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -88,7 +88,9 @@ public class LoginSelection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AdminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginActionPerformed
-        // TODO add your handling code here:
+    AdminLogin newpage = new AdminLogin();
+        newpage.setVisible(true);
+        dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_AdminLoginActionPerformed
 
     private void UserLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserLoginActionPerformed
