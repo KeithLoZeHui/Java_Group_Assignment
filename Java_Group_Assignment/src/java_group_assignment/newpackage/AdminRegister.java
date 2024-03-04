@@ -206,7 +206,7 @@ public class AdminRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminEmailTextActionPerformed
 
     private void ComfirmBut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComfirmBut1ActionPerformed
-    AdminHome newpage = new AdminHome();
+    AdminLogin newpage = new AdminLogin();
         newpage.setVisible(true);
         dispose();              // TODO add your handling code here:
     }//GEN-LAST:event_ComfirmBut1ActionPerformed

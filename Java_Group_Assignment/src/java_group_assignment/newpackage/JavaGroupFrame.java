@@ -205,7 +205,7 @@ public class JavaGroupFrame extends javax.swing.JFrame {
             //add new redirect
         }
         else{
-            JOptionPane.showMessageDialog(this, "Error invlid email/password");
+            JOptionPane.showMessageDialog(this, "Invalid Email or password", "Invalid Email or password", JOptionPane.ERROR_MESSAGE);
         }    
         
     }//GEN-LAST:event_LogoinButActionPerformed
