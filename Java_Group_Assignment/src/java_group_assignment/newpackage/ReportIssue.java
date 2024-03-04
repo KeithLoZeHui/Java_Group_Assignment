@@ -79,12 +79,22 @@ public class ReportIssue extends javax.swing.JFrame {
         });
 
         Wardrobe.setText("wardrobe");
+        Wardrobe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WardrobeActionPerformed(evt);
+            }
+        });
 
         BedFrame.setText("Bed Frame");
 
         jLabel1.setText("Furniture Damage: ");
 
         Mattress.setText("Mattress");
+        Mattress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MattressActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Electrical Appliance:");
 
@@ -268,21 +278,52 @@ public class ReportIssue extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             // TODO add your handling code here:
-            if(Chair.isSelected() == true){
-                String ch = Chair.getText();
-                String tbl = Table.getText();
-                String war = Wardrobe.getText();
-                String bed = BedFrame.getText();
-                String matt = Mattress.getText();
-
                 File file = new File("Reports.txt");
                 if (!file.exists()) {
 
                 }    
                 try (FileWriter writer = new FileWriter("Reports.txt", true)) {
-                    writer.write(ch + "," + tbl + "," + war + "," + bed +"," +matt + "\n");
+                    String sentence= "";
+                    if(Chair.isSelected() == true){
+                        sentence = sentence + Chair.getText();
+                    }
+                    if(Table.isSelected() == true){
+                        sentence = sentence + Table.getText();
+                    }
+                    if(Wardrobe.isSelected() == true){
+                        sentence = sentence + Wardrobe.getText();
+                    }
+                    if(BedFrame.isSelected() == true){
+                        sentence = sentence + BedFrame.getText();
+                    }
+                    if(Mattress.isSelected() == true){
+                        sentence = sentence + Mattress.getText();
+                    }
+                    if(airCon.isSelected() == true){
+                        sentence = sentence + airCon.getText();
+                    }
+                    if(WallSocket.isSelected() == true){
+                        sentence = sentence + WallSocket.getText();
+                    }
+                    if(BathHeat.isSelected() == true){
+                        sentence = sentence + BathHeat.getText();
+                    }
+                    if(Lights.isSelected() == true){
+                        sentence = sentence + Lights.getText();
+                    }
+                    if(Fans.isSelected() == true){
+                        sentence = sentence + Fans.getText();
+                    }
+                    
+                    String name = jTextField2.getText();
+                    String TPID = jTextField3.getText();
+                    String date = jTextField4.getText();
+                    String others = jTextField1.getText();
+                    
 
-                    JOptionPane.showMessageDialog(this, "Appointment Booked.");
+                    writer.write(name+","+TPID+","+date+","+others+","+sentence+"UnFinished"+ "\n");
+
+                    JOptionPane.showMessageDialog(this, "Report Submitted.");
 
 
                 Chair.setText("");
@@ -297,7 +338,7 @@ public class ReportIssue extends javax.swing.JFrame {
                 HomePage newpage = new HomePage();
                     newpage.setVisible(true);
                     dispose();
-            }
+            
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ChairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChairActionPerformed
@@ -307,6 +348,14 @@ public class ReportIssue extends javax.swing.JFrame {
     private void TableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TableActionPerformed
+
+    private void WardrobeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WardrobeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WardrobeActionPerformed
+
+    private void MattressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MattressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MattressActionPerformed
 
     /**
      * @param args the command line arguments

@@ -191,6 +191,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="wardrobe"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WardrobeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="BedFrame">
       <Properties>
@@ -206,6 +209,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Mattress"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MattressActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
