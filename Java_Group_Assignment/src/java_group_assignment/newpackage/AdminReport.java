@@ -104,7 +104,7 @@ public class AdminReport extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String filePath = "C:\\Users\\darke\\OneDrive\\Desktop\\Folder for sem 5\\Java\\Java_Group_Assignment\\Java_Group_Assignment\\Reports.txt";
+    String filePath = "Reports.txt";
     File file = new File(filePath);
     
         try {

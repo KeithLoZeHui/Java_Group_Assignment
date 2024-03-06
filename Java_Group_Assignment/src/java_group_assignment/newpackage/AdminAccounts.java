@@ -103,7 +103,7 @@ public class AdminAccounts extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    String filePath = "C:\\Users\\darke\\OneDrive\\Desktop\\Folder for sem 5\\Java\\Java_Group_Assignment\\Java_Group_Assignment\\adminACC.txt";
+    String filePath = "adminACC.txt";
     File file = new File(filePath);
     
         try {
