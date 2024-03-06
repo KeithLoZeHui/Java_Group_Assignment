@@ -46,9 +46,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jCheckBox1" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Terrible" min="-2" pref="87" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Bad" min="-2" pref="87" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
@@ -61,11 +61,11 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="jCheckBox3" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Medium" min="-2" pref="87" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox4" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Good" min="-2" pref="87" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox5" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="Excellent" min="-2" pref="87" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="FeedENTid" alignment="0" pref="231" max="32767" attributes="0"/>
@@ -104,11 +104,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Terrible" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Medium" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Good" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Excellent" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -141,30 +141,33 @@
         <Property name="text" type="java.lang.String" value="Give Us Your Feedback"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="Terrible">
       <Properties>
         <Property name="text" type="java.lang.String" value="Terrible"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="Bad">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bad"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BadActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="Medium">
       <Properties>
         <Property name="text" type="java.lang.String" value="Medium"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MediumActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="Good">
       <Properties>
         <Property name="text" type="java.lang.String" value="Good"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+    <Component class="javax.swing.JCheckBox" name="Excellent">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excellent"/>
       </Properties>

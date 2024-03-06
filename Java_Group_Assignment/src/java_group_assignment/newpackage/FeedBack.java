@@ -35,11 +35,11 @@ public class FeedBack extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        Terrible = new javax.swing.JCheckBox();
+        Bad = new javax.swing.JCheckBox();
+        Medium = new javax.swing.JCheckBox();
+        Good = new javax.swing.JCheckBox();
+        Excellent = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         FeedENTid = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -60,20 +60,25 @@ public class FeedBack extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 48)); // NOI18N
         jLabel1.setText("Give Us Your Feedback");
 
-        jCheckBox1.setText("Terrible");
+        Terrible.setText("Terrible");
 
-        jCheckBox2.setText("Bad");
-
-        jCheckBox3.setText("Medium");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        Bad.setText("Bad");
+        Bad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                BadActionPerformed(evt);
             }
         });
 
-        jCheckBox4.setText("Good");
+        Medium.setText("Medium");
+        Medium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MediumActionPerformed(evt);
+            }
+        });
 
-        jCheckBox5.setText("Excellent");
+        Good.setText("Good");
+
+        Excellent.setText("Excellent");
 
         jLabel2.setText("Please Enter Your Name: ");
 
@@ -114,9 +119,9 @@ public class FeedBack extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Terrible, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(Bad, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,11 +130,11 @@ public class FeedBack extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Medium, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Good, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(Excellent, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(FeedENTid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                                             .addComponent(feedENTname, javax.swing.GroupLayout.Alignment.LEADING))))
@@ -154,11 +159,11 @@ public class FeedBack extends javax.swing.JFrame {
                         .addComponent(FeedENTid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5))
+                    .addComponent(Terrible)
+                    .addComponent(Bad)
+                    .addComponent(Medium)
+                    .addComponent(Good)
+                    .addComponent(Excellent))
                 .addGap(45, 45, 45)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
@@ -179,11 +184,27 @@ public class FeedBack extends javax.swing.JFrame {
             dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_MediumActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String sentence ="";
+        if(Excellent.isSelected() == true){
+                        sentence = sentence + Excellent.getText();
+                    }
+        if(Good.isSelected() == true){
+                        sentence = sentence + Good.getText();
+                    }
+        if(Medium.isSelected() == true){
+                        sentence = sentence + Medium.getText();
+                    }
+        if(Bad.isSelected() == true){
+                        sentence = sentence + Bad.getText();
+                    }
+        if(Terrible.isSelected() == true){
+                        sentence = sentence + Terrible.getText();
+                    }
         String entname = feedENTname.getText();
         String enttp = FeedENTid.getText();
         String entdate = FeedBACKtxt.getText();
@@ -194,7 +215,7 @@ public class FeedBack extends javax.swing.JFrame {
         
     }    
         try (FileWriter writer = new FileWriter("FeedBack.txt", true)) {
-            writer.write(entname + "," + enttp + "," + entdate + "," + "\n");
+            writer.write(entname + "," + enttp + "," + entdate + "," + sentence+"\n");
         
             JOptionPane.showMessageDialog(this, "Feedback Given, Thank you for Your Time.");
 
@@ -215,6 +236,10 @@ public class FeedBack extends javax.swing.JFrame {
     private void feedENTnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feedENTnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_feedENTnameActionPerformed
+
+    private void BadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,18 +277,18 @@ public class FeedBack extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox Bad;
+    private javax.swing.JCheckBox Excellent;
     private javax.swing.JTextField FeedBACKtxt;
     private javax.swing.JTextField FeedENTid;
+    private javax.swing.JCheckBox Good;
+    private javax.swing.JCheckBox Medium;
+    private javax.swing.JCheckBox Terrible;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField feedENTname;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

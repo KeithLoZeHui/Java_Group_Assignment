@@ -1,2 +1,3 @@
-
-Keith,Tp067653,15082003,,ChairWall SocketUnFinished
+Name/TPID/DDMMYYYY/Others/Broken Item/Status
+Keith,Tp067653,15082003,,ChairWall Socket,UnFinished
+Name,TPID,14122023,Other,Air Conditioner, UnFinished

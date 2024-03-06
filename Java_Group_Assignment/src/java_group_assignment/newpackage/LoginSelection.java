@@ -29,7 +29,6 @@ public class LoginSelection extends javax.swing.JFrame {
     private void initComponents() {
 
         AdminLogin = new javax.swing.JButton();
-        TechnicianLogin = new javax.swing.JButton();
         UserLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -43,11 +42,8 @@ public class LoginSelection extends javax.swing.JFrame {
             }
         });
 
-        TechnicianLogin.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        TechnicianLogin.setText("Technician  Login");
-
         UserLogin.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        UserLogin.setText("User Login");
+        UserLogin.setText("Staff Login");
         UserLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserLoginActionPerformed(evt);
@@ -62,26 +58,23 @@ public class LoginSelection extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(388, 388, 388)
+                .addGap(306, 306, 306)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(UserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TechnicianLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AdminLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(268, Short.MAX_VALUE))
+                    .addComponent(AdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(350, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(62, 62, 62)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(AdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TechnicianLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(58, 58, 58)
                 .addComponent(UserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,7 +129,6 @@ public class LoginSelection extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdminLogin;
-    private javax.swing.JButton TechnicianLogin;
     private javax.swing.JButton UserLogin;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
