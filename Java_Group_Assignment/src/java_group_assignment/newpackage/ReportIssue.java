@@ -285,34 +285,34 @@ public class ReportIssue extends javax.swing.JFrame {
                 try (FileWriter writer = new FileWriter("Reports.txt", true)) {
                     String sentence= "";
                     if(Chair.isSelected() == true){
-                        sentence = sentence + Chair.getText();
+                        sentence = "RM10 "+ sentence + Chair.getText();
                     }
                     if(Table.isSelected() == true){
-                        sentence = sentence + Table.getText();
+                        sentence ="RM15 "+ sentence + Table.getText();
                     }
                     if(Wardrobe.isSelected() == true){
-                        sentence = sentence + Wardrobe.getText();
+                        sentence = "RM30 "+sentence + Wardrobe.getText();
                     }
                     if(BedFrame.isSelected() == true){
-                        sentence = sentence + BedFrame.getText();
+                        sentence = "RM50 "+sentence + BedFrame.getText();
                     }
                     if(Mattress.isSelected() == true){
-                        sentence = sentence + Mattress.getText();
+                        sentence = "RM50 "+sentence + Mattress.getText();
                     }
                     if(airCon.isSelected() == true){
-                        sentence = sentence + airCon.getText();
+                        sentence = "RM40 "+sentence + airCon.getText();
                     }
                     if(WallSocket.isSelected() == true){
-                        sentence = sentence + WallSocket.getText();
+                        sentence = "RM5 "+sentence + WallSocket.getText();
                     }
                     if(BathHeat.isSelected() == true){
-                        sentence = sentence + BathHeat.getText();
+                        sentence = "RM60 "+sentence + BathHeat.getText();
                     }
                     if(Lights.isSelected() == true){
-                        sentence = sentence + Lights.getText();
+                        sentence = "RM5 "+sentence + Lights.getText();
                     }
                     if(Fans.isSelected() == true){
-                        sentence = sentence + Fans.getText();
+                        sentence ="RM10 "+ sentence + Fans.getText();
                     }
                     
                     String name = jTextField2.getText();
