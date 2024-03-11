@@ -4,6 +4,10 @@
  */
 package java_group_assignment.newpackage;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author darke
@@ -104,9 +108,15 @@ public class ManageACC extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    AdminAccounts newpage = new AdminAccounts();
+    AdminAccounts newpage;
+        try {
+            newpage = new AdminAccounts();
             newpage.setVisible(true);
-            dispose();             // TODO add your handling code here:
+            dispose();   
+        } catch (IOException ex) {
+            Logger.getLogger(ManageACC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                      // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

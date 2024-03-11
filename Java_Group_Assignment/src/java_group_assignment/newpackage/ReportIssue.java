@@ -284,35 +284,46 @@ public class ReportIssue extends javax.swing.JFrame {
                 }    
                 try (FileWriter writer = new FileWriter("Reports.txt", true)) {
                     String sentence= "";
+                    int price = 0;
                     if(Chair.isSelected() == true){
-                        sentence = "RM10 "+ sentence + Chair.getText();
+                        sentence = sentence + Chair.getText();
+                        price = 10;
                     }
                     if(Table.isSelected() == true){
-                        sentence ="RM15 "+ sentence + Table.getText();
+                        sentence =sentence + Table.getText();
+                        price = 15;
                     }
                     if(Wardrobe.isSelected() == true){
-                        sentence = "RM30 "+sentence + Wardrobe.getText();
+                        sentence =sentence + Wardrobe.getText();
+                        price = 30;
                     }
                     if(BedFrame.isSelected() == true){
-                        sentence = "RM50 "+sentence + BedFrame.getText();
+                        sentence =sentence + BedFrame.getText();
+                        price = 50;
                     }
                     if(Mattress.isSelected() == true){
-                        sentence = "RM50 "+sentence + Mattress.getText();
+                        sentence =sentence + Mattress.getText();
+                        price = 50;
                     }
                     if(airCon.isSelected() == true){
-                        sentence = "RM40 "+sentence + airCon.getText();
+                        sentence =sentence + airCon.getText();
+                        price = 40;
                     }
                     if(WallSocket.isSelected() == true){
-                        sentence = "RM5 "+sentence + WallSocket.getText();
+                        sentence =sentence + WallSocket.getText();
+                        price = 5;
                     }
                     if(BathHeat.isSelected() == true){
-                        sentence = "RM60 "+sentence + BathHeat.getText();
+                        sentence =sentence + BathHeat.getText();
+                        price = 60;
                     }
                     if(Lights.isSelected() == true){
-                        sentence = "RM5 "+sentence + Lights.getText();
+                        sentence = sentence + Lights.getText();
+                        price = 5;
                     }
                     if(Fans.isSelected() == true){
-                        sentence ="RM10 "+ sentence + Fans.getText();
+                        sentence =sentence + Fans.getText();
+                        price = 10;
                     }
                     
                     String name = jTextField2.getText();
@@ -321,7 +332,7 @@ public class ReportIssue extends javax.swing.JFrame {
                     String others = jTextField1.getText();
                     
 
-                    writer.write(name+","+TPID+","+date+","+others+","+sentence+", UnFinished"+ "\n");
+                    writer.write(name+","+TPID+","+date+","+others+","+sentence+","+price+", UnFinished"+ "\n");
 
                     JOptionPane.showMessageDialog(this, "Report Submitted.");
 

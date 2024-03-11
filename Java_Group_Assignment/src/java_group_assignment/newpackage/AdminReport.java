@@ -52,7 +52,7 @@ public class AdminReport extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "TPID", "DDMMYYYY", "Others", "Price & Broken Item", "Status"
+                "Name", "TPID", "DDMMYYYY", "Others", "Broken Item","Price RM", "Status"
             }
         ));
         jScrollPane1.setViewportView(Reports);

@@ -11,11 +11,27 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 public class UserAccounts extends javax.swing.JFrame {
-    
+String table[][] = new String[100][];    
     /**
      * Creates new form UserAccounts
      */
-    public UserAccounts() {
+    public UserAccounts() throws FileNotFoundException, IOException {
+        String filename ="registered_users.txt";
+        FileReader fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
+        
+        String line;
+        int count = 0;
+        
+        while((line = br.readLine()) !=null){
+            String[] values = line.split(",");
+            table[count] = values;
+            count++;
+            
+            
+        }
+        br.close();
+        fr.close();
         initComponents();
         
     }
@@ -44,15 +60,14 @@ public class UserAccounts extends javax.swing.JFrame {
         });
 
         userTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-            },
+            table,
             new String [] {
                 "Email", "Username", "TP ID", "Password"
             }
         ));
         jScrollPane1.setViewportView(userTable);
 
-        jButton2.setText("Account data from Registered Users");
+        jButton2.setText("Edit Account data from Registered Users");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -74,7 +89,7 @@ public class UserAccounts extends javax.swing.JFrame {
                         .addGap(80, 80, 80))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(359, 359, 359)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton2)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -99,28 +114,32 @@ public class UserAccounts extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    
-    String filePath = "registered_users.txt";
-    File file = new File(filePath);
-    
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split("/");
-            DefaultTableModel model =(DefaultTableModel) userTable.getModel();
-            model.setColumnIdentifiers(columnsName);
-            
-            Object[] tableLines = br.lines().toArray();
-            
-            for(int i = 0; i <tableLines.length; i++){
-                String line = tableLines[i].toString().trim();
-                String[] dataRow =line.split(",");
-                model.addRow(dataRow);
+    String filename ="registered_users.txt";
+        File file = new File(filename);
+        FileWriter fw;
+    try {
+        fw = new FileWriter(filename);
+        BufferedWriter bw = new BufferedWriter(fw);
+        for(int i = 0; i<100; i++){
+             String fruitname = String.valueOf(userTable.getModel().getValueAt(i, 0));
+             String quantity = String.valueOf(userTable.getModel().getValueAt(i, 1));
+             String price = String.valueOf(userTable.getModel().getValueAt(i, 2));
+             String Supplier = String.valueOf(userTable.getModel().getValueAt(i, 3));
+            if(fruitname.equals("null")){
+                break;
             }
-            
-        } catch (Exception ex) {
-            Logger.getLogger(UserAccounts.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            String sentence = fruitname +"," + quantity+"," +price+"," +Supplier +"\n";
+            System.out.println(sentence);
+            bw.write(sentence);
+           
+        }   
+        bw.close();
+        fw.close();
+        
+        
+    } catch (IOException ex) {
+        Logger.getLogger(AdminAccounts.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -151,9 +170,14 @@ public class UserAccounts extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserAccounts().setVisible(true);
+                try {
+                    new UserAccounts().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(UserAccounts.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

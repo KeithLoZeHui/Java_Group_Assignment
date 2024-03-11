@@ -1,3 +1,2 @@
-Name/TPID/DDMMYYYY/Others/Price & Broken Item/Status
-Price test,Price test,Price test,Price test,RM10 Chair, UnFinished
-Name,Tp0000ID,12122023,Others Issues,RM5 RM10 ChairWall Socket, UnFinished
+Name/TPID/DDMMYYYY/Others/Broken Item/Price RM/Status
+Test3,Test3,Test3,,Chair,10, UnFinished
