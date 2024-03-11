@@ -4,6 +4,10 @@
  */
 package java_group_assignment.newpackage;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author darke
@@ -80,7 +84,7 @@ public class AdminHome extends javax.swing.JFrame {
         });
 
         jButton6.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jButton6.setText("Review Reports");
+        jButton6.setText("Review Booking");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -143,7 +147,12 @@ public class AdminHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    AdminReport newpage = new AdminReport();
+    AdminReport newpage = null;
+        try {
+            newpage = new AdminReport();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
         newpage.setVisible(true);
         dispose();                      // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed

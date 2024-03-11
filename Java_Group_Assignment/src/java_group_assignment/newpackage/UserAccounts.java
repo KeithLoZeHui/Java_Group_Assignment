@@ -121,14 +121,15 @@ String table[][] = new String[100][];
         fw = new FileWriter(filename);
         BufferedWriter bw = new BufferedWriter(fw);
         for(int i = 0; i<100; i++){
-             String fruitname = String.valueOf(userTable.getModel().getValueAt(i, 0));
-             String quantity = String.valueOf(userTable.getModel().getValueAt(i, 1));
-             String price = String.valueOf(userTable.getModel().getValueAt(i, 2));
-             String Supplier = String.valueOf(userTable.getModel().getValueAt(i, 3));
-            if(fruitname.equals("null")){
+             String Email = String.valueOf(userTable.getModel().getValueAt(i, 0));
+             String Username = String.valueOf(userTable.getModel().getValueAt(i, 1));
+             String TPID = String.valueOf(userTable.getModel().getValueAt(i, 2));
+             String Password = String.valueOf(userTable.getModel().getValueAt(i, 3));
+            if(Email.equals("null")){
                 break;
             }
-            String sentence = fruitname +"," + quantity+"," +price+"," +Supplier +"\n";
+            //"Email", "Username", "TP ID", "Password"
+            String sentence = Email +"," + Username+"," +TPID+"," +Password +"\n";
             System.out.println(sentence);
             bw.write(sentence);
            

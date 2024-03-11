@@ -5,8 +5,12 @@
 package java_group_assignment.newpackage;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -16,11 +20,27 @@ import javax.swing.table.DefaultTableModel;
  * @author darke
  */
 public class AdminReport extends javax.swing.JFrame {
-
+String table[][] = new String[100][]; 
     /**
      * Creates new form AdminReport
      */
-    public AdminReport() {
+    public AdminReport() throws FileNotFoundException, IOException {
+        String filename ="Reports.txt";
+        FileReader fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
+        
+        String line;
+        int count = 0;
+        
+        while((line = br.readLine()) !=null){
+            String[] values = line.split(",");
+            table[count] = values;
+            count++;
+            
+            
+        }
+        br.close();
+        fr.close();
         initComponents();
     }
 
@@ -40,7 +60,7 @@ public class AdminReport extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Click to Load User reports");
+        jButton1.setText("Click to Update User reports");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -48,9 +68,7 @@ public class AdminReport extends javax.swing.JFrame {
         });
 
         Reports.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
+            table,
             new String [] {
                 "Name", "TPID", "DDMMYYYY", "Others", "Broken Item","Price RM", "Status"
             }
@@ -104,27 +122,33 @@ public class AdminReport extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String filePath = "Reports.txt";
-    File file = new File(filePath);
-    
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split("/");
-            DefaultTableModel model =(DefaultTableModel) Reports.getModel();
-            model.setColumnIdentifiers(columnsName);
-            
-            Object[] tableLines = br.lines().toArray();
-            
-            for(int i = 0; i <tableLines.length; i++){
-                String line = tableLines[i].toString().trim();
-                String[] dataRow =line.split(",");
-                model.addRow(dataRow);
+    String filename ="Reports.txt";
+        File file = new File(filename);
+        FileWriter fw;
+    try {
+        fw = new FileWriter(filename);
+        BufferedWriter bw = new BufferedWriter(fw);
+        for(int i = 0; i<100; i++){
+             String Name = String.valueOf(Reports.getModel().getValueAt(i, 0));
+             String TPID = String.valueOf(Reports.getModel().getValueAt(i, 1));
+             String DDMMYYYY = String.valueOf(Reports.getModel().getValueAt(i, 2));
+             String Others = String.valueOf(Reports.getModel().getValueAt(i, 3));
+             String Broken = String.valueOf(Reports.getModel().getValueAt(i, 4));
+             String Price = String.valueOf(Reports.getModel().getValueAt(i, 5));
+             String Status = String.valueOf(Reports.getModel().getValueAt(i, 6));
+            if(Name.equals("null")){
+                break;
             }
-            
-        } catch (Exception ex) {
-            Logger.getLogger(UserAccounts.class.getName()).log(Level.SEVERE, null, ex);
-        }             // TODO add your handling code here:
+            String sentence = Name +"," + TPID+"," +DDMMYYYY+"," +Others+"," +Broken+","+Price+","+Status+"\n";
+            System.out.println(sentence);
+            bw.write(sentence);
+           
+        }   
+        bw.close();
+        fw.close();
+        } catch (IOException ex) {
+        Logger.getLogger(AdminReport.class.getName()).log(Level.SEVERE, null, ex);
+    }// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -157,7 +181,11 @@ public class AdminReport extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminReport().setVisible(true);
+                try {
+                    new AdminReport().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(AdminReport.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
