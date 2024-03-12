@@ -1,2 +1,1 @@
-Name/TPID/DDMMYYYY/Others/Broken Item/Price RM/Status
-Test3,Test3,Test3,,Chair,10, UnFinished
+name,TP ID,ddmmyyyy,,Air ConditionerWall Socket,5, UnFinished
