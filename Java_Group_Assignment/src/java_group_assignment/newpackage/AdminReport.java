@@ -70,7 +70,7 @@ String table[][] = new String[100][];
         Reports.setModel(new javax.swing.table.DefaultTableModel(
             table,
             new String [] {
-                "Name", "TPID", "DDMMYYYY", "Others", "Broken Item","Price RM", "Status"
+                "Name", "TPID", "Date & Time", "Others", "Broken Item","Price RM", "Status"
             }
         ));
         jScrollPane1.setViewportView(Reports);

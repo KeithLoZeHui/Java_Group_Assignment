@@ -4,7 +4,7 @@
  */
 package java_group_assignment.newpackage;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader;  
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -62,7 +62,7 @@ String table[][] = new String[100][];
         BOOK.setModel(new javax.swing.table.DefaultTableModel(
             table,
             new String [] {
-                "name", "TP ID", "DDMMYYYY", "Time","Details"
+                "name", "TP ID", "DDMMYYYY", "Time","Details","Date & Time Booked"
             }
         ));
         jScrollPane1.setViewportView(BOOK);
@@ -120,6 +120,7 @@ String table[][] = new String[100][];
              String DDMMYYYY = String.valueOf(BOOK.getModel().getValueAt(i, 2));
              String time = String.valueOf(BOOK.getModel().getValueAt(i, 3));
              String details = String.valueOf(BOOK.getModel().getValueAt(i, 3));
+             
             if(Name.equals("null")){
                 break;
             }

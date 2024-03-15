@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.Date;
 import javax.swing.*;
 import javax.swing.JOptionPane;
 
@@ -169,7 +170,7 @@ public class BookAPT extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        Date dateBOOK = new Date(); 
         String entname = ENTname.getText();
         String enttp = ENTtp.getText();
         String entdate = ENTdate.getText();
@@ -181,7 +182,7 @@ public class BookAPT extends javax.swing.JFrame {
         
     }    
         try (FileWriter writer = new FileWriter("BookAPT.txt", true)) {
-            writer.write(entname + "," + enttp + "," + entdate + "," + enttime +"," +entdetails + "\n");
+            writer.write(entname + "," + enttp + "," + entdate + "," + enttime +"," +entdetails+"," +dateBOOK+ "\n");
         
             JOptionPane.showMessageDialog(this, "Appointment Booked.");
 

@@ -59,7 +59,7 @@ public class ManageACC extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 48)); // NOI18N
-        jLabel1.setText("Mange Accounts");
+        jLabel1.setText("Manage Accounts");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,7 +120,12 @@ public class ManageACC extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    UserAccounts newpage = new UserAccounts();
+    UserAccounts newpage = null;
+        try {
+            newpage = new UserAccounts();
+        } catch (IOException ex) {
+            Logger.getLogger(ManageACC.class.getName()).log(Level.SEVERE, null, ex);
+        }
             newpage.setVisible(true);
             dispose();             // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
