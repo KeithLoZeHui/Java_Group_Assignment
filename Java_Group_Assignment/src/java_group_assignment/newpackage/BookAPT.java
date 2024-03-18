@@ -84,6 +84,12 @@ public class BookAPT extends javax.swing.JFrame {
             }
         });
 
+        ENTdetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ENTdetailsActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Enter Details");
 
         jButton2.setText("Cancel");
@@ -196,14 +202,14 @@ public class BookAPT extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
             }
         
-        HomePage newpage = new HomePage();
+        AdminHome newpage = new AdminHome();
             newpage.setVisible(true);
             dispose();
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    HomePage newpage = new HomePage();
+    AdminHome newpage = new AdminHome();
             newpage.setVisible(true);
             dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -215,6 +221,10 @@ public class BookAPT extends javax.swing.JFrame {
     private void ENTtimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENTtimeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ENTtimeActionPerformed
+
+    private void ENTdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENTdetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ENTdetailsActionPerformed
 
     /**
      * @param args the command line arguments
