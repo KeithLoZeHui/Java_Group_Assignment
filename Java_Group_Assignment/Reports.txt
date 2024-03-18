@@ -1,4 +1,5 @@
-name,TP ID,ddmmyyyy,,Air ConditionerWall Socket,5, UnFinished
-Name 1,TPIP 1,Tue Mar 12 09:17:35 MYT 2024,Some minor issues,Air Conditioner,40, UnFinished
+name,TP ID,ddmmyyyy,,Air ConditionerWall Socket,85, UnFinished
+Name 1,TPIP 1,Tue Mar 12 09:17:35 MYT 2024,Some minor issues,Air Conditioner,980, UnFinished
 Name 3,TPID 3,Tue Mar 12 09:21:21 MYT 2024,,Air ConditionerBath Water Heater,60, UnFinished
 Name 4,TPID 4,Tue Mar 12 09:29:16 MYT 2024,,wardrobe,30, UnFinished
+Name 5,TPIP 1,Tue Mar 23 10:17:35 MYT 2024,Some minor issues,Air Conditioner,980, UnFinished
