@@ -6,7 +6,9 @@ package java_group_assignment.newpackage;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -16,11 +18,27 @@ import javax.swing.table.DefaultTableModel;
  * @author darke
  */
 public class AdminFeedbackreview extends javax.swing.JFrame {
-
+String table[][] = new String[100][]; 
     /**
      * Creates new form AdminFeedbackreview
      */
-    public AdminFeedbackreview() {
+    public AdminFeedbackreview() throws FileNotFoundException, IOException {
+        String filename ="FeedBack.txt";
+        FileReader fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
+        
+        String line;
+        int count = 0;
+        
+        while((line = br.readLine()) !=null){
+            String[] values = line.split(",");
+            table[count] = values;
+            count++;
+            
+            
+        }
+        br.close();
+        fr.close();
         initComponents();
     }
 
@@ -41,9 +59,7 @@ public class AdminFeedbackreview extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         FeedbackTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
+            table,
             new String [] {
                 "Name", "TPNUM", "Comments", "Rating"
             }
@@ -156,7 +172,11 @@ public class AdminFeedbackreview extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminFeedbackreview().setVisible(true);
+                try {
+                    new AdminFeedbackreview().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(AdminFeedbackreview.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
