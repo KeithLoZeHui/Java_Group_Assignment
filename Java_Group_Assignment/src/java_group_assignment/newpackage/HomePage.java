@@ -4,6 +4,10 @@
  */
 package java_group_assignment.newpackage;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author darke
@@ -121,7 +125,12 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    Payment newpage = new Payment();
+    Payment newpage = null;
+        try {
+            newpage = new Payment();
+        } catch (IOException ex) {
+            Logger.getLogger(HomePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         newpage.setVisible(true);
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
