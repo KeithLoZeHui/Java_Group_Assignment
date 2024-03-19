@@ -167,38 +167,41 @@ public class AdminRegister extends javax.swing.JFrame {
         String employID = AdminEmployID.getText();
         String password = new String(AdminPassWord.getPassword());
         String confirmPassword = new String(AdminCPassWord.getPassword());
-
+        
+        if (password.equals("") && email.equals("") && username.equals("") && employID.equals("")&& confirmPassword.equals("")){
+            JOptionPane.showMessageDialog(this, "Please Fill in all Criteria", "Please Fill in all Criteria", JOptionPane.ERROR_MESSAGE);
+        }else{
         if (!password.equals(confirmPassword)) {
-            JOptionPane.showMessageDialog(this, "Passwords do not match.");
+            JOptionPane.showMessageDialog(this, "Password Does not Match", "Password Does not Match", JOptionPane.ERROR_MESSAGE);
             return;
+            
+        }else{
+            
+            AdminHome newpage = new AdminHome();
+            newpage.setVisible(true);
+            dispose();
 
+            File file = new File("adminACC.txt");
+            if (!file.exists()) {
+
+            }
+            }
+            try (FileWriter writer = new FileWriter("adminACC.txt", true)) {
+                writer.write(email + "," + username + "," + employID + "," + password + "\n");
+
+                // Show a message dialog to confirm that the registration was successful
+                JOptionPane.showMessageDialog(this, "Registration successful.");
+
+                // Clear the text fields and password fields
+                AdminEmailText.setText("");
+                AdminUsernameText.setText("");
+                AdminEmployID.setText("");
+                AdminPassWord.setText("");
+                AdminCPassWord.setText("");
+            }catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
+            }
         }
-
-        JavaGroupFrame newpage = new JavaGroupFrame();
-        newpage.setVisible(true);
-        dispose();
-
-        File file = new File("adminACC.txt");
-        if (!file.exists()) {
-
-        }
-
-        try (FileWriter writer = new FileWriter("adminACC.txt", true)) {
-            writer.write(email + "," + username + "," + employID + "," + password + "\n");
-
-            // Show a message dialog to confirm that the registration was successful
-            JOptionPane.showMessageDialog(this, "Registration successful.");
-
-            // Clear the text fields and password fields
-            AdminEmailText.setText("");
-            AdminUsernameText.setText("");
-            AdminEmployID.setText("");
-            AdminPassWord.setText("");
-            AdminCPassWord.setText("");
-        }catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
-        }
-
     }//GEN-LAST:event_ComfirmButActionPerformed
 
     private void AdminEmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminEmailTextActionPerformed

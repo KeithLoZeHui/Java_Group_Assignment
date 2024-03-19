@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import static java.lang.constant.ConstantDescs.NULL;
 import java.util.Date;
 import javax.swing.*;
 import javax.swing.JOptionPane;
@@ -176,35 +177,39 @@ public class BookAPT extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Date dateBOOK = new Date(); 
-        String entname = ENTname.getText();
-        String enttp = ENTtp.getText();
-        String entdate = ENTdate.getText();
-        String enttime = ENTtime.getText();
-        String entdetails = ENTdetails.getText();
-        
-        File file = new File("BookAPT.txt");
-        if (!file.exists()) {
-        
-    }    
-        try (FileWriter writer = new FileWriter("BookAPT.txt", true)) {
-            writer.write(entname + "," + enttp + "," + entdate + "," + enttime +"," +entdetails+"," +dateBOOK+ "\n");
-        
-            JOptionPane.showMessageDialog(this, "Appointment Booked.");
+        if(!ENTtp.getText().equals(NULL)) {
+                JOptionPane.showMessageDialog(this, "Please Enter All Required Feilds", "Please Enter All Required Feilds", JOptionPane.ERROR_MESSAGE);
+            }else{
+                Date dateBOOK = new Date(); 
+                String entname = ENTname.getText();
+                String enttp = ENTtp.getText();
+                String entdate = ENTdate.getText();
+                String enttime = ENTtime.getText();
+                String entdetails = ENTdetails.getText();
 
-        
-        ENTname.setText("");
-        ENTtp.setText("");
-        ENTdate.setText("");
-        ENTtime.setText("");
-        ENTdetails.setText("");
-        }catch (IOException e) {
-        JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
-            }
-        
-        AdminHome newpage = new AdminHome();
-            newpage.setVisible(true);
-            dispose();
+                File file = new File("BookAPT.txt");
+                if (!file.exists()) {
+
+            }    
+                try (FileWriter writer = new FileWriter("BookAPT.txt", true)) {
+                    writer.write(entname + "," + enttp + "," + entdate + "," + enttime +"," +entdetails+"," +dateBOOK+ "\n");
+
+                    JOptionPane.showMessageDialog(this, "Appointment Booked.");
+
+
+                ENTname.setText("");
+                ENTtp.setText("");
+                ENTdate.setText("");
+                ENTtime.setText("");
+                ENTdetails.setText("");
+                }catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
+                    }
+
+                AdminHome newpage = new AdminHome();
+                    newpage.setVisible(true);
+                    dispose();
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

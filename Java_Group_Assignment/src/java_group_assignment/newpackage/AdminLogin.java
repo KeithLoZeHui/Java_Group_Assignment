@@ -150,30 +150,33 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminEnterPasswordActionPerformed
 
     private void LogoinButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoinButActionPerformed
-        String email = AdminEnterEmail.getText();
-        String pass = AdminEnterPassword.getText();
+        if(AdminEnterEmail.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please Enter Email or pasword!!", "Please Enter Email or pasword!!", JOptionPane.ERROR_MESSAGE);
+        }else{
+            String email = AdminEnterEmail.getText();
+            String pass = AdminEnterPassword.getText();
 
-        List<String[]> data =  readAdminACC();
-        boolean exist = false;
-        for(int i = 0; i<data.size() ;i++){
-            if(email.equals(data.get(i)[0]) && pass.equals(data.get(i)[2])){
-                exist = true;
-                break;
+            List<String[]> data =  readAdminACC();
+            boolean exist = false;
+            for(int i = 0; i<data.size() ;i++){
+                if(email.equals(data.get(i)[0]) && pass.equals(data.get(i)[2])){
+                    exist = true;
+                    break;
+                }
+            }
+
+            if(exist == true){
+                JOptionPane.showMessageDialog(this, "Login Success");
+
+                AdminHome newpage = new AdminHome();
+                newpage.setVisible(true);
+                dispose();
+                //add new redirect
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Invalid Email or password", "Invalid Email or password", JOptionPane.ERROR_MESSAGE);
             }
         }
-
-        if(exist == true){
-            JOptionPane.showMessageDialog(this, "Login Success");
-
-            AdminHome newpage = new AdminHome();
-            newpage.setVisible(true);
-            dispose();
-            //add new redirect
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Invalid Email or password", "Invalid Email or password", JOptionPane.ERROR_MESSAGE);
-        }
-
     }//GEN-LAST:event_LogoinButActionPerformed
 
     private void AdminEnterEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminEnterEmailActionPerformed
