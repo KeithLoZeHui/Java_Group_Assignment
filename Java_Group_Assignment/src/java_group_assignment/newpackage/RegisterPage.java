@@ -7,6 +7,8 @@ package java_group_assignment.newpackage;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.JOptionPane;
 
@@ -152,6 +154,24 @@ public class RegisterPage extends javax.swing.JFrame {
     }//GEN-LAST:event_EmailTextActionPerformed
 
     private void ComfirmButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComfirmButActionPerformed
+        String filename ="registered_users.txt";
+        File rfile = new File(filename);
+        FileReader fr;
+        try {
+        fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
+
+        String Email = EmailText.getText();
+
+
+        String line;
+        while((line = br.readLine()) !=null){
+            String[] values = line.split(",");
+            if(Email.equals(values[0])){
+                JOptionPane.showMessageDialog(this, "Email already exist try again or cannot be left blank", "Email already exist try again or cannot be left blank", JOptionPane.ERROR_MESSAGE);
+                throw new Exception();
+            }
+        }
         String email = EmailText.getText();
         String username = UsernameText.getText();
         String employID = EmployID.getText();
@@ -188,7 +208,15 @@ public class RegisterPage extends javax.swing.JFrame {
         }catch (IOException e) {
         JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
             }
+        br.close();
+        fr.close();
         
+        
+    } catch (IOException ex) {
+        Logger.getLogger(AdminAccounts.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (Exception e) {
+        
+    }
     }//GEN-LAST:event_ComfirmButActionPerformed
 
     private void ComfirmBut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComfirmBut1ActionPerformed

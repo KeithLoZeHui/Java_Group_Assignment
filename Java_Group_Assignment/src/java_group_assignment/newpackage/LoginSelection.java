@@ -31,8 +31,10 @@ public class LoginSelection extends javax.swing.JFrame {
         AdminLogin = new javax.swing.JButton();
         UserLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AdminLogin.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         AdminLogin.setText("Admin Login");
@@ -41,6 +43,7 @@ public class LoginSelection extends javax.swing.JFrame {
                 AdminLoginActionPerformed(evt);
             }
         });
+        getContentPane().add(AdminLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 179, 389, 113));
 
         UserLogin.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         UserLogin.setText("Staff Login");
@@ -49,33 +52,15 @@ public class LoginSelection extends javax.swing.JFrame {
                 UserLoginActionPerformed(evt);
             }
         });
+        getContentPane().add(UserLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 350, 389, 113));
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 36)); // NOI18N
         jLabel1.setText("Account Login Selection");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 62, -1, 59));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(306, 306, 306)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(UserLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(350, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(AdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(UserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/java_group_assignment/Pictures/vecteezy_futuristic-neon-background-illustration-ai-generative_24661531.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-780, -130, 1860, 980));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,5 +116,6 @@ public class LoginSelection extends javax.swing.JFrame {
     private javax.swing.JButton AdminLogin;
     private javax.swing.JButton UserLogin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
