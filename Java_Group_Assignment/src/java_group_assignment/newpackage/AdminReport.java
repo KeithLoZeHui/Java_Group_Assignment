@@ -4,6 +4,7 @@
  */
 package java_group_assignment.newpackage;
 
+import java.awt.event.ItemEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,25 +12,35 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
  * @author darke
  */
 public class AdminReport extends javax.swing.JFrame {
-String table[][] = new String[100][]; 
+String table[][] = new String[100][];
+int i = -1;
+
     /**
      * Creates new form AdminReport
      */
     public AdminReport() throws FileNotFoundException, IOException {
+
         String filename ="Reports.txt";
         FileReader fr = new FileReader(filename);
         BufferedReader br = new BufferedReader(fr);
         
+        
+        
+        
         String line;
+        
         int count = 0;
         
         while((line = br.readLine()) !=null){
@@ -43,7 +54,8 @@ String table[][] = new String[100][];
         fr.close();
         initComponents();
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,10 +69,12 @@ String table[][] = new String[100][];
         jScrollPane1 = new javax.swing.JScrollPane();
         Reports = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Click to Update User reports");
+        jButton1.setText("Click to Confim Update Status");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -73,6 +87,11 @@ String table[][] = new String[100][];
                 "Name", "TPID", "Date & Time", "Others", "Broken Item","Price RM", "Status"
             }
         ));
+        Reports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ReportsMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(Reports);
 
         jButton2.setText("Rerturn");
@@ -82,34 +101,52 @@ String table[][] = new String[100][];
             }
         });
 
+        jCheckBox1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jCheckBox1.setText("Status: Finished");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 48)); // NOI18N
+        jLabel1.setText("Reports Status");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(276, 276, 276)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,34 +159,57 @@ String table[][] = new String[100][];
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String filename ="Reports.txt";
-        File file = new File(filename);
-        FileWriter fw;
-    try {
-        fw = new FileWriter(filename);
-        BufferedWriter bw = new BufferedWriter(fw);
-        for(int i = 0; i<100; i++){
-             String Name = String.valueOf(Reports.getModel().getValueAt(i, 0));
-             String TPID = String.valueOf(Reports.getModel().getValueAt(i, 1));
-             String DDMMYYYY = String.valueOf(Reports.getModel().getValueAt(i, 2));
-             String Others = String.valueOf(Reports.getModel().getValueAt(i, 3));
-             String Broken = String.valueOf(Reports.getModel().getValueAt(i, 4));
-             String Price = String.valueOf(Reports.getModel().getValueAt(i, 5));
-             String Status = String.valueOf(Reports.getModel().getValueAt(i, 6));
-            if(Name.equals("null")){
-                break;
+        
+        TableModel Tab = Reports.getModel();
+        if(jCheckBox1.isSelected() && String.valueOf(Tab.getValueAt(i, 6)).equals("UnFinished")){
+            Tab.setValueAt("Finish", i, 6);
+            
+            FileWriter fw;
+            try {
+                fw = new FileWriter("Reports.txt");
+            
+            BufferedWriter bw =new BufferedWriter(fw);
+        
+            for(int j=0; j<Tab.getRowCount(); j++){
+                if(Tab.getValueAt(j, 0) != null ){
+                    String Nam = String.valueOf(Tab.getValueAt(j, 0));
+                    String TP = String.valueOf(Tab.getValueAt(j, 1));
+                    String date = String.valueOf(Tab.getValueAt(j, 2));
+                    String oth = String.valueOf(Tab.getValueAt(j, 3));
+                    String Broke = String.valueOf(Tab.getValueAt(j, 4));
+                    String price = String.valueOf(Tab.getValueAt(j, 5));
+                    String stat = String.valueOf(Tab.getValueAt(j, 6));
+                    
+                    String Sens = Nam+","+TP+","+date+","+oth+","+Broke+","+price+","+stat+"\n";
+                    bw.write (Sens);
+                    
+                }
+                
+               
             }
-            String sentence = Name +"," + TPID+"," +DDMMYYYY+"," +Others+"," +Broken+","+Price+","+Status+"\n";
-            System.out.println(sentence);
-            bw.write(sentence);
-           
-        }   
-        bw.close();
-        fw.close();
-        } catch (IOException ex) {
-        Logger.getLogger(AdminReport.class.getName()).log(Level.SEVERE, null, ex);
-    }// TODO add your handling code here:
+            bw.close();
+            fw.close();
+            
+            } catch (IOException ex) {
+                Logger.getLogger(AdminReport.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+    
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void ReportsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsMouseReleased
+        // TODO add your handling code here:
+        i = Reports.getSelectedRow();
+        
+        
+        
+    }//GEN-LAST:event_ReportsMouseReleased
 
     /**
      * @param args the command line arguments
@@ -194,6 +254,8 @@ String table[][] = new String[100][];
     private javax.swing.JTable Reports;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

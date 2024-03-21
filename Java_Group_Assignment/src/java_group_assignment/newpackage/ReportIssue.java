@@ -323,7 +323,7 @@ public class ReportIssue extends javax.swing.JFrame {
 
             String others = jTextField1.getText();
 
-            writer.write(name + "," + TPID + "," + date + "," + others + "," + sentence + "," + price + ", UnFinished" + "\n");
+            writer.write(name + "," + TPID + "," + date + "," + others + "," + sentence + "," + price + ",UnFinished" + "\n");
 
             JOptionPane.showMessageDialog(this, "Report Submitted.");
 

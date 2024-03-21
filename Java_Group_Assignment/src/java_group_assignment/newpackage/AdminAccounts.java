@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +27,7 @@ String table[][] = new String[100][];
      * Creates new form AdminAccounts
      
      */
+    
     public AdminAccounts() throws IOException  {
         
   
@@ -94,9 +97,6 @@ String table[][] = new String[100][];
             }
         ));
         adminTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminTableMouseClicked(evt);
-            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 adminTableMouseReleased(evt);
             }
@@ -193,6 +193,24 @@ String table[][] = new String[100][];
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private List<String[]> readAdminACC() throws IOException{
+        List<String[]> users = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("adminACC.txt"))){
+            String line;
+            while ((line = br.readLine()) !=null){
+                String[] data = line.split(",");
+                if (data.length >=3){
+                    users.add(new String[]{data[0], data[2], data[3]});
+                }
+            }
+        }catch (IOException e){ // Fixed the variable name here
+            e.printStackTrace();
+        }
+        return users;
+    }
+    int i = -1;
+        
+    
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ManageACC newpage = new ManageACC();
@@ -214,7 +232,6 @@ String table[][] = new String[100][];
             String TPID = TPPID.getText();
             String Password = Pass.getText();
             
-            int i = adminTable.getSelectedRow();
             TableModel model = adminTable.getModel();
             
             model.setValueAt(Email, i, 0);
@@ -223,11 +240,29 @@ String table[][] = new String[100][];
             model.setValueAt(Password, i, 3);
             
             
-                     
+            for(int j=0; j<model.getRowCount(); j++){
+                if(model.getValueAt(j, 0)!= null){
+                    String emel = String.valueOf(model.getValueAt(j, 0));
+                    String usename = String.valueOf(model.getValueAt(j, 1));
+                    String TP = String.valueOf(model.getValueAt(j, 2));
+                    String Pass = String.valueOf(model.getValueAt(j, 3));
+                    
+                    String Sens = emel+","+usename+","+TP+","+Pass+"\n";
+                    bw.write(Sens);
+                    
+                }
+                else{
+                    break;
+                }
+                
+                
+            }
+            System.out.println(model.getRowCount());
+            
                        
-            String sentence = Email +"," + Username+"," +TPID+"," +Password +"\n";
-            System.out.println(sentence);
-            bw.write(sentence);
+//            String sentence = Email +"," + Username+"," +TPID+"," +Password +"\n";
+//            System.out.println(sentence);
+//            bw.write(sentence);
             
     
         bw.close();
@@ -240,20 +275,15 @@ String table[][] = new String[100][];
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void adminTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseReleased
-    adminTable.getSelectedRow();  
-    System.out.println(adminTable.getSelectedRow());         // TODO add your handling code here:
-    }//GEN-LAST:event_adminTableMouseReleased
-
-    private void adminTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseClicked
-    int i = adminTable.getSelectedRow();
+    //adminTable.getSelectedRow();  
+    //System.out.println(adminTable.getSelectedRow());         // TODO add your handling code here:
+    i = adminTable.getSelectedRow();
     TableModel model = adminTable.getModel();
     EmailText.setText(model.getValueAt(i,0).toString());
     NAME.setText(model.getValueAt(i,1).toString());
     TPPID.setText(model.getValueAt(i,2).toString());
     Pass.setText(model.getValueAt(i,3).toString());
-    
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminTableMouseClicked
+    }//GEN-LAST:event_adminTableMouseReleased
 
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
         // TODO add your handling code here:

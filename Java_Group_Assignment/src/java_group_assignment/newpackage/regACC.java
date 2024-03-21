@@ -29,6 +29,7 @@ public class regACC extends javax.swing.JFrame {
         RegisterBut = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        RegisterBut1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +52,14 @@ public class regACC extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         jLabel1.setText("Register New Account");
 
+        RegisterBut1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        RegisterBut1.setText("Back");
+        RegisterBut1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterBut1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,6 +75,10 @@ public class regACC extends javax.swing.JFrame {
                         .addGap(348, 348, 348)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(127, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(RegisterBut1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(175, 175, 175))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +89,9 @@ public class regACC extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RegisterBut, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(275, 275, 275))
+                .addGap(69, 69, 69)
+                .addComponent(RegisterBut1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(153, 153, 153))
         );
 
         pack();
@@ -93,6 +108,12 @@ public class regACC extends javax.swing.JFrame {
         newpage.setVisible(true);
         dispose();            // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void RegisterBut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBut1ActionPerformed
+    AdminHome newpage = new AdminHome();
+        newpage.setVisible(true);
+        dispose();            // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterBut1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,6 +152,7 @@ public class regACC extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RegisterBut;
+    private javax.swing.JButton RegisterBut1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

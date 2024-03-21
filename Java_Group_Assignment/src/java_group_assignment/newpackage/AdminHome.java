@@ -85,7 +85,7 @@ public class AdminHome extends javax.swing.JFrame {
         });
 
         jButton7.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
-        jButton7.setText("Book Appintment");
+        jButton7.setText("Book Appointment");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -187,7 +187,7 @@ public class AdminHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    AdminRegister newpage = new AdminRegister();
+    LoginSelection newpage = new LoginSelection();
         newpage.setVisible(true);
         dispose();            // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
