@@ -104,8 +104,8 @@ public class AdminHome extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 297, 204, 86));
 
-        jButton8.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jButton8.setText("Regiser New Accounts");
+        jButton8.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton8.setText("Register New Accounts");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -142,7 +142,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/java_group_assignment/Pictures/5162027.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 660));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
