@@ -23,14 +23,7 @@ import javax.swing.table.TableModel;
  */
 public class AdminAccounts extends javax.swing.JFrame {
 String table[][] = new String[100][];
-    /**
-     * Creates new form AdminAccounts
-     
-     */
-    
     public AdminAccounts() throws IOException  {
-        
-  
         
         String filename ="adminACC.txt";
         FileReader fr = new FileReader(filename);

@@ -6,6 +6,8 @@ package java_group_assignment.newpackage;
 
 import java.io.*;
 import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -17,6 +19,7 @@ String table[][] = new String[100][];
      * Creates new form UserAccounts
      */
     public UserAccounts() throws FileNotFoundException, IOException {
+        
         String filename ="registered_users.txt";
         FileReader fr = new FileReader(filename);
         BufferedReader br = new BufferedReader(fr);
@@ -181,7 +184,22 @@ String table[][] = new String[100][];
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private List<String[]> readregistered_users() throws IOException{
+        List<String[]> users = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("registered_users.txt"))){
+            String line;
+            while ((line = br.readLine()) !=null){
+                String[] data = line.split(",");
+                if (data.length >=3){
+                    users.add(new String[]{data[0], data[2], data[3]});
+                }
+            }
+        }catch (IOException e){ // Fixed the variable name here
+            e.printStackTrace();
+        }
+        return users;
+    }
+    int i = -1;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ManageACC newpage = new ManageACC();
         newpage.setVisible(true);
@@ -189,33 +207,54 @@ String table[][] = new String[100][];
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    String filename ="registered_users.txt";
-        File file = new File(filename);
-        FileWriter fw;
-    try {
-        fw = new FileWriter(filename);
-        BufferedWriter bw = new BufferedWriter(fw);
-        for(int i = 0; i<100; i++){
-             String Email = String.valueOf(userTable.getModel().getValueAt(i, 0));
-             String Username = String.valueOf(userTable.getModel().getValueAt(i, 1));
-             String TPID = String.valueOf(userTable.getModel().getValueAt(i, 2));
-             String Password = String.valueOf(userTable.getModel().getValueAt(i, 3));
-            if(Email.equals("null")){
-                break;
-            }
-            //"Email", "Username", "TP ID", "Password"
-            String sentence = Email +"," + Username+"," +TPID+"," +Password +"\n";
-            System.out.println(sentence);
-            bw.write(sentence);
-           
-        }   
-        bw.close();
-        fw.close();
-        
-        
-    } catch (IOException ex) {
-        Logger.getLogger(AdminAccounts.class.getName()).log(Level.SEVERE, null, ex);
-    }
+            String filename ="registered_users.txt";
+            File file = new File(filename);
+            FileWriter fw;
+        try {
+            fw = new FileWriter(filename);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+                String Email = EmailText.getText();
+                String Username = NAME.getText();
+                String TPID = TPPID.getText();
+                String Password = Pass.getText();
+
+                TableModel model = userTable.getModel();
+
+                model.setValueAt(Email, i, 0);
+                model.setValueAt(Username, i, 1);
+                model.setValueAt(TPID, i, 2);
+                model.setValueAt(Password, i, 3);
+
+
+                for(int j=0; j<model.getRowCount(); j++){
+                    if(model.getValueAt(j, 0)!= null){
+                        String emel = String.valueOf(model.getValueAt(j, 0));
+                        String usename = String.valueOf(model.getValueAt(j, 1));
+                        String TP = String.valueOf(model.getValueAt(j, 2));
+                        String Pass = String.valueOf(model.getValueAt(j, 3));
+
+                        String Sens = emel+","+usename+","+TP+","+Pass+"\n";
+                        bw.write(Sens);
+
+                    }
+                    else{
+                        break;
+                    }
+
+
+                }
+                System.out.println(model.getRowCount());
+
+
+
+            bw.close();
+            fw.close();
+
+
+        } catch (IOException ex) {
+            Logger.getLogger(UserAccounts.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void EmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextActionPerformed
@@ -228,7 +267,7 @@ String table[][] = new String[100][];
 
     private void userTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTableMouseReleased
     userTable.getSelectedRow();
-    int i = userTable.getSelectedRow();
+    i = userTable.getSelectedRow();
     TableModel model = userTable.getModel();
     
     EmailText.setText(model.getValueAt(i,0).toString());
