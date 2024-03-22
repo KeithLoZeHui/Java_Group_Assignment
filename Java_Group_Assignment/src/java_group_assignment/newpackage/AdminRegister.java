@@ -4,9 +4,13 @@
  */
 package java_group_assignment.newpackage;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -162,6 +166,26 @@ public class AdminRegister extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComfirmButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComfirmButActionPerformed
+        String filename ="adminACC.txt";
+        File rfile = new File(filename);
+        FileReader fr;
+        try {
+        fr = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fr);
+
+        String Email = AdminEmailText.getText();
+
+
+        String line;
+        while((line = br.readLine()) !=null){
+            String[] values = line.split(",");
+            if(Email.equals(values[0])){
+                JOptionPane.showMessageDialog(this, "Email already exist try again or cannot be left blank", "Email already exist try again or cannot be left blank", JOptionPane.ERROR_MESSAGE);
+                throw new Exception();
+            }
+        }
+        
+        
         String email = AdminEmailText.getText();
         String username = AdminUsernameText.getText();
         String employID = AdminEmployID.getText();
@@ -202,6 +226,11 @@ public class AdminRegister extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage());
             }
         }
+        } catch (IOException ex) {
+        Logger.getLogger(AdminAccounts.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (Exception e) {
+        
+    }
     }//GEN-LAST:event_ComfirmButActionPerformed
 
     private void AdminEmailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminEmailTextActionPerformed
